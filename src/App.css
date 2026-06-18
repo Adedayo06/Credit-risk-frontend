@@ -1,0 +1,377 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef4ff 0%, #f7f9fc 45%, #ffffff 100%);
+}
+ 
+button,
+input {
+  font: inherit;
+}
+ 
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+ 
+.app-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+ 
+.app-header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111827;
+}
+ 
+.app-header p {
+  margin: 12px auto 0;
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #667085;
+}
+ 
+.credit-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  padding: 32px;
+}
+ 
+.credit-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: #111827;
+}
+ 
+.form-description {
+  margin: 0 0 28px;
+  color: #667085;
+  font-size: 15px;
+}
+ 
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+ 
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.form-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #344054;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+ 
+.form-field input {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #101828;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+ 
+.form-field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+ 
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+ 
+.submit-button {
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+ 
+.submit-button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+  transform: translateY(-1px);
+}
+ 
+.submit-button:disabled {
+  background: #98a2b3;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+ 
+.result-card {
+  margin-top: 28px;
+  border-radius: 16px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  padding: 20px;
+}
+ 
+.result-card h3 {
+  margin: 0 0 16px;
+  color: #1e3a8a;
+}
+ 
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+ 
+.result-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+ 
+.result-label {
+  display: block;
+  font-size: 13px;
+  color: #667085;
+  margin-bottom: 6px;
+}
+ 
+.result-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+}
+ 
+.risk-high {
+  color: #b42318;
+}
+ 
+.risk-low {
+  color: #027a48;
+}
+ 
+.error-card {
+  margin-top: 24px;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  color: #b42318;
+  font-weight: 600;
+}
+ 
+.raw-result {
+  margin-top: 16px;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+ 
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+@media (max-width: 640px) {
+  .app {
+    padding: 24px 14px;
+  }
+ 
+  .app-header h1 {
+    font-size: 28px;
+  }
+ 
+  .credit-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+ 
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .form-actions {
+    justify-content: stretch;
+  }
+ 
+  .submit-button {
+    width: 100%;
+  }
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.upload-box {
+  border: 1px dashed #98a2b3;
+  border-radius: 16px;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.upload-box label {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #344054;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.upload-box input[type="file"] {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.file-name {
+  margin: 12px 0 0;
+  color: #475467;
+  font-size: 14px;
+}
+
+.batch-summary {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+  color: #027a48;
+}
+
+.progress-card {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.secondary-button {
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #eff6ff;
+}
+
+.table-wrapper {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.results-table th,
+.results-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+.results-table th {
+  background: #f9fafb;
+  color: #344054;
+  font-weight: 800;
+}
+
+.results-table td {
+  color: #101828;
+}
+
+@media (max-width: 640px) {
+  .result-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secondary-button {
+    width: 100%;
+  }
+}
+
+.saved-report-card {
+  margin-top: 20px;
+  border-radius: 14px;
+  padding: 16px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #14532d;
+}
+
+.saved-report-card p {
+  margin: 8px 0 16px;
+  font-size: 14px;
+  color: #166534;
+  word-break: break-all;
+}
