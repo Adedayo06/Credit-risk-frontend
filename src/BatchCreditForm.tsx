@@ -6,7 +6,7 @@ import type {
   BatchCreditRiskResult,
 } from "./types";
 
-const API_URL = "http://127.0.0.1:8000/batch-score";
+const API_URL = "http://127.0.0.1:8001/batch-score";
 
 const expectedFields = [
   "id",
@@ -273,7 +273,7 @@ const resetBatchState = () => {
 
     <a
       className="secondary-button"
-      href={`http://127.0.0.1:8000/score-reports/${reportId}/csv`}
+      href={`http://127.0.0.1:8001/score-reports/${reportId}/csv`}
       target="_blank"
       rel="noreferrer"
     >
